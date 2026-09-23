@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qodirova Shahrizoda Maqolalari</title>
+    <style>
+        /* CSS QISMI: Saytning butun dizayni va bezaklari */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Orqa fondagi katta suv belgisi (Watermark) */
+        .watermark {
+            position: absolute;
+            font-size: 5vw;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.03);
+            text-transform: uppercase;
+            z-index: 0;
+            user-select: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Asosiy oyna (Kard) */
+        .card {
+            position: relative;
+            z-index: 1;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        /* CSS Tugma dizayni */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.6);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Orqa fondagi matn -->
+    <div class="watermark">Qodirova Shahrizoda Maqolalari</div>
+
+    <!-- Markaziy qism -->
+    <div class="card">
+        <h1>Xush kelibsiz!</h1>
+        <p>Bu yerda Qodirova Shahrizodaning shaxsiy maqolalari va qiziqarli ilmiy ishlanmalari e'lon qilib boriladi.</p>
+        <a href="#" class="btn">Maqolalarni ko'rish</a>
+    </div>
+
+</body>
+</html>

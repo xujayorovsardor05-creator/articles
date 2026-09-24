@@ -6,12 +6,12 @@
     <title>Qodirova Shahrizoda Maqolalari</title>
     <style>
         :root {
-            --primary-color: #ff2a5f;
-            --primary-hover: #ff0040;
-            --bg-color: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --text-color: #f5f5f5;
-            --text-muted: #b0b0b0;
+            --burgundy: #800020;
+            --burgundy-light: #a3143a;
+            --bg-color: #0b0f19;
+            --card-bg: #111625;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
         }
 
         * {
@@ -23,163 +23,102 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            min-height: 100vh;
+            color: var(--text-main);
+            height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            overflow-x: hidden;
-        }
-
-        header {
-            width: 100%;
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #2a000d, var(--bg-color));
-            border-bottom: 2px solid var(--primary-color);
-            animation: fadeInDown 1s ease-out;
-            box-shadow: 0 5px 20px rgba(255, 42, 95, 0.2);
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            color: #00ff66; /* Yorqin neon yashil rang (animatsiyasiz, doimiy yorqin) */
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(0, 255, 102, 0.8), 0 0 40px rgba(0, 255, 102, 0.4);
-        }
-
-        header p {
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-
-        .container {
-            max-width: 900px;
-            width: 100%;
-            padding: 40px 20px;
-            display: grid;
-            gap: 25px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid #333;
-            border-left: 6px solid var(--primary-color);
-            padding: 25px;
-            border-radius: 10px;
-            transition: all 0.4s ease;
-            animation: fadeInUp 1s ease-out, borderPulse 2s infinite alternate;
-            opacity: 0;
-            animation-fill-mode: forwards;
-            position: relative;
             overflow: hidden;
+            position: relative;
         }
 
-        .card::after {
-            content: '';
+        /* Orqa fondagi katta xira matn effekti */
+        .bg-watermark {
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 42, 95, 0.05), transparent);
-            transition: 0.5s;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8vw;
+            font-weight: 900;
+            color: rgba(128, 0, 32, 0.12); /* Bardoviy tusdagi xira fon */
+            white-space: nowrap;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+            letter-spacing: 5px;
         }
 
-        .card:hover::after {
-            left: 100%;
+        /* Markaziy oyna (Card) */
+        .welcome-card {
+            position: relative;
+            z-index: 1;
+            background-color: var(--card-bg);
+            border: 1px solid rgba(128, 0, 32, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(128, 0, 32, 0.15);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 480px;
+            width: 90%;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        .card:nth-child(1) { animation-delay: 0.2s; }
-        .card:nth-child(2) { animation-delay: 0.4s; }
-
-        .card:hover {
-            transform: translateY(-7px) scale(1.01);
-            border-color: #ff3366;
-            box-shadow: 0 15px 35px rgba(255, 42, 95, 0.35);
-        }
-
-        .card h2 {
-            color: #ffffff;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            line-height: 1.6;
+        .welcome-card h1 {
+            font-size: 2rem;
             margin-bottom: 15px;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .welcome-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--primary-color);
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
             font-weight: 600;
-            box-shadow: 0 0 10px rgba(255, 42, 95, 0.4);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.4);
         }
 
         .btn:hover {
-            background-color: var(--primary-hover);
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 42, 95, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(163, 20, 58, 0.6);
+            background: linear-gradient(135deg, var(--burgundy-light), #c21847);
         }
 
-        footer {
-            margin-top: auto;
-            padding: 20px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid #222;
-            width: 100%;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes borderPulse {
-            0% { box-shadow: 0 0 5px rgba(255, 42, 95, 0.2); }
-            100% { box-shadow: 0 0 20px rgba(255, 42, 95, 0.6); }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Qodirova Shahrizoda Maqolalari</h1>
-        <p>Ilmiy va ijodiy maqolalar olamiga xush kelibsiz</p>
-    </header>
+    <!-- Orqa fondagi xira ism -->
+    <div class="bg-watermark">QODIROVA SHAHRIZODA</div>
 
-    <div class="container">
-        <div class="card">
-            <h2>Birinchi Maqola: Zamonaviy Dunyo</h2>
-            <p>Talabalik davridagi qiziqarli izlanishlar, o'quv jarayonlari va shaxsiy tajribalar haqida yozilgan maqolalar to'plami.</p>
-            <a href="#" class="btn">O'qishni davom ettirish</a>
-        </div>
-
-        <div class="card">
-            <h2>Ikkinchi Maqola: Ilmiy Izlanishlar</h2>
-            <p>Ilmiy faoliyat va yutuqlar haqida yozilgan qiziqarli maqolalar to'plami bilan tanishing.</p>
-            <a href="#" class="btn">O'qishni davom ettirish</a>
-        </div>
+    <!-- Markaziy qism -->
+    <div class="welcome-card">
+        <h1>Xush kelibsiz!</h1>
+        <p>Bu yerda Qodirova Shahrizodaning shaxsiy maqolalari va qiziqarli ilmiy ishlanmalari e'lon qilib boriladi.</p>
+        <a href="#" class="btn">Maqolalarni ko'rish</a>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Qodirova Shahrizoda. Barcha huquqlar himoyalangan.</p>
-    </footer>
 
 </body>
 </html>

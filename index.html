@@ -43,10 +43,9 @@
 
         header h1 {
             font-size: 2.8rem;
-            color: #00ff66; /* Juda yorqin neon yashil rang */
+            color: #00ff66; /* Yorqin neon yashil rang (animatsiyasiz, doimiy yorqin) */
             margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(0, 255, 102, 0.8), 0 0 30px rgba(0, 255, 102, 0.5); /* Kuchli porlash effekti */
-            animation: titleGlow 2s infinite alternate;
+            text-shadow: 0 0 20px rgba(0, 255, 102, 0.8), 0 0 40px rgba(0, 255, 102, 0.4);
         }
 
         header p {
@@ -154,11 +153,6 @@
         @keyframes borderPulse {
             0% { box-shadow: 0 0 5px rgba(255, 42, 95, 0.2); }
             100% { box-shadow: 0 0 20px rgba(255, 42, 95, 0.6); }
-        }
-
-        @keyframes titleGlow {
-            0% { text-shadow: 0 0 10px rgba(0, 255, 102, 0.5); }
-            100% { text-shadow: 0 0 25px rgba(0, 255, 102, 1), 0 0 40px rgba(0, 255, 102, 0.6); }
         }
     </style>
 </head>

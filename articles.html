@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqolalar - Qodirova Shahrizoda</title>
+    <style>
+        :root {
+            --burgundy: #800020;
+            --burgundy-light: #a3143a;
+            --bg-color: #0b0f19;
+            --card-bg: #111625;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
+
+        /* Orqa fondagi xira matn effekti */
+        .bg-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5.5vw;
+            font-weight: 900;
+            color: rgba(128, 0, 32, 0.08);
+            white-space: nowrap;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+            letter-spacing: 4px;
+        }
+
+        /* Header qismi */
+        header {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 900px;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .back-btn {
+            background: transparent;
+            border: 1px solid rgba(128, 0, 32, 0.5);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--burgundy);
+            color: white;
+            border-color: var(--burgundy);
+        }
+
+        /* Maqolalar konteyneri */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 90%;
+            margin-top: 20px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(128, 0, 32, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--burgundy-light);
+        }
+
+        .article-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .article-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .read-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(128, 0, 32, 0.3);
+        }
+
+        .read-btn:hover {
+            background: linear-gradient(135deg, var(--burgundy-light), #c21847);
+            box-shadow: 0 6px 16px rgba(163, 20, 58, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Orqa fondagi xira ism -->
+    <div class="bg-watermark">QODIROVA SHAHRIZODA</div>
+
+    <!-- Yuqori qism -->
+    <header>
+        <h1>Maqolalar</h1>
+        <a href="index.html" class="back-btn">&larr; Asosiy sahifa</a>
+    </header>
+
+    <!-- Maqolalar ro'yxati -->
+    <div class="container">
+        
+        <div class="article-card">
+            <h2>1. Zamonaviy dunyoda ilm-fan va yoshlarning o'rni</h2>
+            <p>Talabalik davridagi izlanishlar, zamonaviy texnologiyalardan foydalanish va ilmiy yondashuvlar haqida qisqacha sharh.</p>
+            <a href="#" class="read-btn">O'qish</a>
+        </div>
+
+        <div class="article-card">
+            <h2>2. Axborot xavfsizligi va uning ahamiyati</h2>
+            <p>Raqamli olamda shaxsiy ma'lumotlarni himoya qilish, kiberxavfsizlik asoslari va zamonaviy tahdidlar.</p>
+            <a href="#" class="read-btn">O'qish</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

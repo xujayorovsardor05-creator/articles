@@ -3,222 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qodirova Shahrizoda Maqolalari</title>
+    <title>Maqolalar - Qodirova Shahrizoda</title>
     <style>
-        :root {
-            --burgundy: #800020;
-            --burgundy-light: #a3143a;
-            --bg-color: #0b0f19;
-            --card-bg: #111625;
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
         }
 
-        /* Sichqoncha ergashuvchi yorug'lik effekti */
-        .mouse-glow {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(128, 0, 32, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            transition: width 0.2s, height 0.2s;
-            z-index: 1;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* Orqa fondagi suzib yuruvchi zarrachalar uchun konteyner */
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(163, 20, 58, 0.3);
-            border-radius: 50%;
-            animation: floatParticle 15s infinite linear;
-        }
-
-        @keyframes floatParticle {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
-        }
-
-        /* Orqa fondagi xira ism */
-        .bg-watermark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 5.5vw;
-            font-weight: 900;
-            color: rgba(128, 0, 32, 0.1);
-            white-space: nowrap;
-            z-index: 0;
-            user-select: none;
-            pointer-events: none;
-            letter-spacing: 4px;
-        }
-
-        /* Markaziy oyna (Card) */
-        .welcome-card {
-            position: relative;
-            z-index: 2;
-            background-color: rgba(17, 22, 37, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(128, 0, 32, 0.4);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(128, 0, 32, 0.2);
-            padding: 40px 30px;
-            border-radius: 20px;
+        h1 {
+            color: #800020;
             text-align: center;
-            max-width: 480px;
-            width: 90%;
-            animation: fadeIn 0.8s ease-out;
+            margin-bottom: 30px;
         }
 
-        .welcome-card h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
-            letter-spacing: 0.5px;
+        .article {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Kichik jonli status */
-        .status-badge {
+        .article h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .back-link {
             display: inline-block;
-            background: rgba(128, 0, 32, 0.2);
-            border: 1px solid rgba(163, 20, 58, 0.4);
-            color: #ff99aa;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .welcome-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
-            color: white;
+            margin-bottom: 20px;
             text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.4);
+            color: #800020;
+            font-weight: bold;
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(163, 20, 58, 0.6);
-            background: linear-gradient(135deg, var(--burgundy-light), #c21847);
-        }
-
-        /* Pastdagi ijtimoiy tarmoqlar yoki mualliflik belgisi */
-        .footer-info {
-            position: absolute;
-            bottom: 20px;
-            z-index: 2;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Sichqoncha nuri -->
-    <div class="mouse-glow" id="mouseGlow"></div>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Orqaga qaytish</a>
+        <h1>Qodirova Shahrizodaning Maqolalari</h1>
 
-    <!-- Orqa fondagi suzuvchi zarrachalar -->
-    <div class="particles" id="particlesContainer"></div>
+        <div class="article">
+            <h2>1. Zamonaviy ta'lim jarayonida pedagogik yondashuvlar</h2>
+            <p>O'quvchilar va talabalarda tanqidiy fikrlashni shakllantirish, ta'lim sifatini oshirishda zamonaviy pedagogik texnologiyalardan foydalanish yo'llari.</p>
+        </div>
 
-    <!-- Orqa fondagi xira ism -->
-    <div class="bg-watermark">QODIROVA SHAHRIZODA</div>
-
-    <!-- Markaziy qism -->
-    <div class="welcome-card">
-        <div class="status-badge">✨ Pedagogika tadqiqotlari</div>
-        <h1>Xush kelibsiz!</h1>
-        <p>Bu yerda Qodirova Shahrizodaning pedagogika yo'nalishidagi shaxsiy maqolalari va ilmiy ishlanmalari e'lon qilib boriladi.</p>
-        <a href="articles.html" class="btn">Maqolalarni ko'rish</a>
+        <div class="article">
+            <h2>2. Pedagogik muloqot madaniyati va uning o'ziga xos xususiyatlari</h2>
+            <p>Ustoz va o'quvchi o'rtasidagi o'zaro hurmat, samarali muloqot muhitini yaratish hamda tarbiyaviy jarayonning psixologik jihatlari.</p>
+        </div>
     </div>
 
-    <div class="footer-info">© 2026 Qodirova Shahrizoda</div>
-
-    <script>
-        // Sichqoncha harakatini kuzatish effekti
-        const glow = document.getElementById('mouseGlow');
-        window.addEventListener('mousemove', (e) => {
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
-        });
-
-        // Avtomatik zarrachalar hosil qilish
-        const container = document.getElementById('particlesContainer');
-        for (let i = 0; i < 20; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            const size = Math.random() * 6 + 2;
-            particle.style.width = size + 'px';
-            particle.style.height = size + 'px';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
-            particle.style.animationDelay = (Math.random() * 5) + 's';
-            container.appendChild(particle);
-        }
-    </script>
 </body>
 </html>

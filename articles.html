@@ -4,108 +4,15 @@
     <meta charset="UTF-8">
     <title>Interfaol metodlar va muammoli ta'lim</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            background-color: #0b0f19; 
-            color: #ffffff; 
-            margin: 0; 
-            padding: 30px; 
-        }
-        .container { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            background: #111625; 
-            padding: 30px; 
-            border-radius: 8px; 
-            border: 1px solid rgba(128, 0, 32, 0.4); 
-        }
+        body { font-family: Arial, sans-serif; background-color: #0b0f19; color: #ffffff; margin: 0; padding: 30px; }
+        .container { max-width: 800px; margin: 0 auto; background: #111625; padding: 30px; border-radius: 8px; border: 1px solid rgba(128, 0, 32, 0.4); }
         h1 { color: #ff99aa; font-size: 1.4rem; margin-bottom: 20px; line-height: 1.4; }
         h3 { color: #ff99aa; margin-top: 20px; font-size: 1.1rem; }
         p { color: #cbd5e1; line-height: 1.6; margin-bottom: 15px; }
         .back-link { display: inline-block; margin-bottom: 20px; color: #ff99aa; text-decoration: none; font-weight: bold; }
-
-        /* Qalqib chiquvchi oyna (Modal) dizayni va animatsiyasi */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            visibility: hidden;
-            animation: fadeInModal 0.5s forwards 0.3s;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: #161b2c;
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #800020;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            transform: scale(0.7);
-            animation: scaleUpModal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.3s;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .modal-content h2 {
-            color: #ff99aa;
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
-
-        .modal-content p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .close-btn {
-            background-color: #800020;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .close-btn:hover {
-            background-color: #a3143a;
-        }
-
-        @keyframes fadeInModal {
-            to {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-
-        @keyframes scaleUpModal {
-            to {
-                transform: scale(1);
-            }
-        }
     </style>
 </head>
 <body>
-
-    <!-- Qalqib chiquvchi animatsiyali oyna -->
-    <div class="modal-overlay" id="welcomeModal">
-        <div class="modal-content">
-            <h2>Xush kelibsiz!</h2>
-            <p>Siz interfaol metodlar va muammoli ta'lim haqidagi maqolani o'qishni boshlayapsiz.</p>
-            <button class="close-btn" onclick="closeModal()">Tushunarli</button>
-        </div>
-    </div>
-
     <div class="container">
         <a href="articles.html" class="back-link">&larr; Maqolalarga qaytish</a>
         <h1>Interfaol metodlar va muammoli ta'limning boshlang'ich ta'limdagi ahamiyati</h1>
@@ -116,11 +23,5 @@
         <h3>Pedagogik texnologiyalar va samaradorlik</h3>
         <p>Zamonaviy pedagogik texnologiyalar oʻquv jarayonini tizimli, interaktiv va oʻquvchi markazli tashkil etish orqali bu muammoni samarali hal etish imkonini beradi. Ular didaktik oʻyinlar, muammoli vaziyatlar va ijodiy topshiriqlar yordamida bolalarda mantiqiy tahlil qilish va original yechim topish qobiliyatlarini rivojlantiradi.</p>
     </div>
-
-    <script>
-        function closeModal() {
-            document.getElementById('welcomeModal').style.display = 'none';
-        }
-    </script>
 </body>
 </html>

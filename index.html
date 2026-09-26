@@ -3,76 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maqolalar - Qodirova Shahrizoda</title>
+    <title>Qodirova Shahrizoda - Portfoliyo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #0b0f19;
             color: #ffffff;
             margin: 0;
-            padding: 30px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .hero-container {
+            background: #111625;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(128, 0, 32, 0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
         }
         h1 {
             color: #ff99aa;
-            text-align: center;
-            margin-bottom: 30px;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
         }
-        .article-card {
-            background: #111625;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid rgba(128, 0, 32, 0.4);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-        .article-card h2 {
-            margin-top: 0;
-            color: #ffffff;
-            font-size: 1.25rem;
-            line-height: 1.4;
-        }
-        .article-card p {
+        .subtitle {
             color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
         }
-        .read-btn {
+        p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        .enter-btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 30px;
             background-color: #800020;
             color: #ffffff;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.95rem;
+            border-radius: 6px;
+            font-size: 1rem;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
-        .read-btn:hover {
+        .enter-btn:hover {
             background-color: #a3143a;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Qodirova Shahrizodaning Maqolalari</h1>
-
-        <div class="article-card">
-            <h2>1. Boshlang'ich sinf o'quvchilarida mantiqiy va ijodiy fikrlashni rivojlantirishda zamonaviy pedagogik texnologiyalar</h2>
-            <p>Mazkur maqolada boshlangʻich sinf oʻquvchilarida mantiqiy va ijodiy fikrlashni rivojlantirishda zamonaviy pedagogik texnologiyalarning oʻrni yoritiladi.</p>
-            <a href="article1.html" class="read-btn">O'qish &rarr;</a>
-        </div>
-
-        <div class="article-card">
-            <h2>2. Interfaol metodlar va muammoli ta'limning boshlang'ich ta'limdagi ahamiyati</h2>
-            <p>Boshlangʻich taʼlim jarayonida oʻquvchilarning tafakkurini faollashtirish va mustaqil xulosa chiqarish imkoniyatlari.</p>
-            <a href="article2.html" class="read-btn">O'qish &rarr;</a>
-        </div>
+    <div class="hero-container">
+        <h1>Qodirova Shahrizoda</h1>
+        <div class="subtitle">Boshlang'ich ta'lim tadqiqotchisi va pedagog</div>
+        <p>Mazkur veb-sayt boshlangʻich sinf oʻquvchilarida mantiqiy va ijodiy fikrlashni rivojlantirishga bagʻishlangan ilmiy maqolalar va pedagogik ishlanmalarga bag'ishlangan.</p>
+        <a href="articles.html" class="enter-btn">Maqolalarni ko'rish &rarr;</a>
     </div>
 
 </body>

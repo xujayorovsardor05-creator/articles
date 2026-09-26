@@ -7,149 +7,163 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
 
     <!-- HEADER / NAVBAR -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="bg-blue-600 text-white font-bold text-xl px-3 py-1 rounded-lg">JobUZ</span>
-                <span class="text-sm text-gray-500 hidden sm:inline">| Ish qidirish platformasi</span>
+    <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-indigo-600 to-violet-500 text-white font-black text-xl px-3.5 py-2 rounded-xl shadow-lg shadow-indigo-500/30">JobUZ</div>
+                <span class="text-xs tracking-wider uppercase text-slate-400 font-semibold hidden sm:inline">Platformasi</span>
             </div>
-            <nav class="hidden md:flex space-x-6 font-medium">
-                <a href="#jobs" class="hover:text-blue-600">Vakansiyalar</a>
-                <a href="#tracker" class="hover:text-blue-600">Ariza Kuzatuvchisi</a>
-                <a href="#cv-builder" class="hover:text-blue-600">CV Yaratish</a>
-                <a href="#employer" class="hover:text-blue-600 text-blue-600 font-semibold">Ish beruvchilar uchun</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#jobs" class="hover:text-indigo-400 transition">Vakansiyalar</a>
+                <a href="#tracker" class="hover:text-indigo-400 transition">Ariza Kuzatuvchisi</a>
+                <a href="#cv-builder" class="hover:text-indigo-400 transition">CV Yaratish</a>
+                <a href="#employer" class="hover:text-indigo-400 transition">Ish beruvchilar</a>
             </nav>
             <div>
-                <button onclick="alert('Kirish oynasi')" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition">Kirish</button>
+                <button onclick="alert('Kirish oynasi')" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-indigo-600/20 transition transform active:scale-95">Kirish</button>
             </div>
         </div>
     </header>
 
     <!-- HERO SECTION & SEARCH -->
-    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 px-4 text-center">
+    <section class="relative overflow-hidden py-20 px-6 text-center border-b border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/40 via-slate-900 to-slate-900 -z-10"></div>
         <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl font-extrabold mb-4">Orzuingizdagi ishni JobUZ bilan toping</h1>
-            <p class="text-lg mb-8 text-blue-100">O‘zbekistondagi eng Sara kompaniyalar va zamonaviy vakansiyalar</p>
+            <span class="inline-flex items-center gap-1.5 py-1.5 px-4 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-6">
+                <i class="fa-solid fa-sparkles"></i> Yangi avlod ish qidirish tizimi
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-white">
+                Orzuingizdagi ishni <span class="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">JobUZ</span> bilan toping
+            </h1>
+            <p class="text-base md:text-lg mb-10 text-slate-400 max-w-2xl mx-auto">O‘zbekistondagi eng ilg‘or kompaniyalar va zamonaviy talab yuqori bo‘lgan vakansiyalar</p>
             
             <!-- Qidiruv paneli -->
-            <div class="bg-white p-3 rounded-xl shadow-lg flex flex-col md:flex-row gap-3">
-                <div class="flex items-center flex-1 px-3 border-b md:border-b-0 md:border-r border-gray-200 py-2">
-                    <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
-                    <input type="text" placeholder="Kasb, ko'nikma yoki kompaniya..." class="w-full outline-none text-gray-700">
+            <div class="bg-slate-800/90 border border-slate-700/80 p-3 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col md:flex-row gap-3">
+                <div class="flex items-center flex-1 px-4 py-3 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                    <i class="fa-solid fa-magnifying-glass text-indigo-400 mr-3"></i>
+                    <input type="text" placeholder="Kasb, ko'nikma yoki kompaniya..." class="w-full bg-transparent outline-none text-slate-200 placeholder-slate-500 text-sm">
                 </div>
-                <div class="flex items-center flex-1 px-3 py-2">
-                    <i class="fa-solid fa-location-dot text-gray-400 mr-3"></i>
-                    <select class="w-full outline-none text-gray-700 bg-transparent">
-                        <option>Barcha shaharlar</option>
-                        <option>Toshkent</option>
-                        <option>Samarqand</option>
-                        <option>Buxoro</option>
+                <div class="flex items-center flex-1 px-4 py-3 bg-slate-900/50 rounded-xl border border-slate-700/50">
+                    <i class="fa-solid fa-location-dot text-indigo-400 mr-3"></i>
+                    <select class="w-full bg-transparent outline-none text-slate-200 text-sm">
+                        <option class="bg-slate-900">Barcha shaharlar</option>
+                        <option class="bg-slate-900">Toshkent</option>
+                        <option class="bg-slate-900">Samarqand</option>
+                        <option class="bg-slate-900">Buxoro</option>
                     </select>
                 </div>
-                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">Qidirish</button>
+                <button class="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-8 py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-indigo-600/30 transition">Qidirish</button>
             </div>
         </div>
     </section>
 
     <!-- MAIN CONTENT -->
-    <main class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <main class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- Vakansiyalar ro'yxati (2 ustun) -->
+        <!-- Vakansiyalar ro'yxati -->
         <div class="lg:col-span-2 space-y-6" id="jobs">
             <div class="flex justify-between items-center">
-                <h2 class="text-2xl font-bold">So'nggi Vakansiyalar</h2>
-                <span class="text-sm text-gray-500">Topildi: 3 ta e'lon</span>
+                <h2 class="text-2xl font-bold text-white">So'nggi Vakansiyalar</h2>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700">3 ta e'lon</span>
             </div>
 
             <!-- Vakansiya karta 1 -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <div class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500/50 p-6 rounded-2xl shadow-xl transition group">
                 <div class="flex justify-between items-start">
                     <div class="flex space-x-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-xl">U</div>
+                        <div class="w-14 h-14 bg-indigo-500/10 border border-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-400 font-bold text-2xl shadow-inner">U</div>
                         <div>
-                            <h3 class="text-lg font-bold flex items-center gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition flex items-center gap-2">
                                 Frontend Developer 
-                                <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-0.5 rounded-full flex items-center gap-1">
                                     <i class="fa-solid fa-check-circle"></i> Verified
                                 </span>
                             </h3>
-                            <p class="text-gray-500 text-sm">Uzbekistan TechCorp • Toshkent</p>
+                            <p class="text-slate-400 text-sm mt-0.5">Uzbekistan TechCorp • Toshkent</p>
                         </div>
                     </div>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-regular fa-heart text-xl"></i></button>
+                    <button class="text-slate-500 hover:text-rose-500 transition text-xl"><i class="fa-regular fa-heart"></i></button>
                 </div>
-                <div class="flex flex-wrap gap-2 my-4">
-                    <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md">Remote</span>
-                    <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md">To'liq stavka</span>
-                    <span class="bg-blue-50 text-blue-600 text-xs px-3 py-1 rounded-md font-semibold">1,200$ - 1,800$</span>
+                <div class="flex flex-wrap gap-2 my-5">
+                    <span class="bg-slate-900/60 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50">Remote</span>
+                    <span class="bg-slate-900/60 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50">To'liq stavka</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 text-xs px-3 py-1.5 rounded-lg border border-indigo-500/20 font-bold">1,200$ - 1,800$</span>
                 </div>
-                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                    <span class="text-xs text-gray-400">2 kun oldin qo'shildi</span>
-                    <button onclick="alert('Ariza muvaffaqiyatli yuborildi! Application Tracker ga qo\'shildi.')" class="bg-blue-50 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-600 hover:text-white transition">Ariza berish</button>
+                <div class="flex justify-between items-center pt-4 border-t border-slate-700/60">
+                    <span class="text-xs text-slate-500">2 kun oldin qo'shildi</span>
+                    <button onclick="alert('Ariza muvaffaqiyatli yuborildi!')" class="bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white border border-indigo-500/20 px-5 py-2 rounded-xl text-xs font-bold transition">Ariza berish</button>
                 </div>
             </div>
 
             <!-- Vakansiya karta 2 -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <div class="bg-slate-800/60 border border-slate-700/60 hover:border-indigo-500/50 p-6 rounded-2xl shadow-xl transition group">
                 <div class="flex justify-between items-start">
                     <div class="flex space-x-4">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold text-xl">C</div>
+                        <div class="w-14 h-14 bg-violet-500/10 border border-violet-500/20 rounded-xl flex items-center justify-center text-violet-400 font-bold text-2xl shadow-inner">C</div>
                         <div>
-                            <h3 class="text-lg font-bold flex items-center gap-2">
+                            <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition flex items-center gap-2">
                                 Cybersecurity Analyst
-                                <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+                                <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2.5 py-0.5 rounded-full flex items-center gap-1">
                                     <i class="fa-solid fa-check-circle"></i> Verified
                                 </span>
                             </h3>
-                            <p class="text-gray-500 text-sm">CyberGuard LLC • Toshkent</p>
+                            <p class="text-slate-400 text-sm mt-0.5">CyberGuard LLC • Toshkent</p>
                         </div>
                     </div>
-                    <button class="text-gray-400 hover:text-red-500"><i class="fa-regular fa-heart text-xl"></i></button>
+                    <button class="text-slate-500 hover:text-rose-500 transition text-xl"><i class="fa-regular fa-heart"></i></button>
                 </div>
-                <div class="flex flex-wrap gap-2 my-4">
-                    <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md">Ofis</span>
-                    <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-md">Tajriba: 1-3 yil</span>
-                    <span class="bg-blue-50 text-blue-600 text-xs px-3 py-1 rounded-md font-semibold">1,500,000 UZS dan</span>
+                <div class="flex flex-wrap gap-2 my-5">
+                    <span class="bg-slate-900/60 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50">Ofis</span>
+                    <span class="bg-slate-900/60 text-slate-300 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50">Tajriba: 1-3 yil</span>
+                    <span class="bg-indigo-500/10 text-indigo-300 text-xs px-3 py-1.5 rounded-lg border border-indigo-500/20 font-bold">1,500,000 UZS dan</span>
                 </div>
-                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                    <span class="text-xs text-gray-400">Bugun qo'shildi</span>
-                    <button onclick="alert('Ariza muvaffaqiyatli yuborildi!')" class="bg-blue-50 text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-600 hover:text-white transition">Ariza berish</button>
+                <div class="flex justify-between items-center pt-4 border-t border-slate-700/60">
+                    <span class="text-xs text-slate-500">Bugun qo'shildi</span>
+                    <button onclick="alert('Ariza muvaffaqiyatli yuborildi!')" class="bg-indigo-600/10 hover:bg-indigo-600 text-indigo-400 hover:text-white border border-indigo-500/20 px-5 py-2 rounded-xl text-xs font-bold transition">Ariza berish</button>
                 </div>
             </div>
 
         </div>
 
-        <!-- O'ng yon panel (Tracker & CV Builder qisqacha) -->
+        <!-- O'ng yon panel -->
         <div class="space-y-6">
             
-            <!-- Application Tracker Box -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" id="tracker">
-                <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-chart-line text-blue-600"></i> Mening Arizalarim (Tracker)
+            <!-- Application Tracker -->
+            <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl shadow-xl" id="tracker">
+                <h3 class="text-base font-bold mb-4 flex items-center gap-2.5 text-white">
+                    <i class="fa-solid fa-chart-line text-indigo-400"></i> Arizalar Kuzatuvchisi
                 </h3>
-                <div class="space-y-4">
-                    <div class="p-3 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
-                        <p class="font-semibold text-sm">Frontend Developer</p>
-                        <p class="text-xs text-blue-700 mt-1">Holat: Ko'rib chiqilmoqda ⏳</p>
+                <div class="space-y-3">
+                    <div class="p-3.5 bg-slate-900/70 border border-slate-700/50 rounded-xl">
+                        <p class="font-semibold text-sm text-slate-200">Frontend Developer</p>
+                        <p class="text-xs text-indigo-400 mt-1 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span> Ko'rib chiqilmoqda
+                        </p>
                     </div>
-                    <div class="p-3 bg-yellow-50 border-l-4 border-yellow-500 rounded-r-lg">
-                        <p class="font-semibold text-sm">Cybersecurity Analyst</p>
-                        <p class="text-xs text-yellow-700 mt-1">Holat: Suhbat belgilandi 📅</p>
+                    <div class="p-3.5 bg-slate-900/70 border border-slate-700/50 rounded-xl">
+                        <p class="font-semibold text-sm text-slate-200">Cybersecurity Analyst</p>
+                        <p class="text-xs text-amber-400 mt-1 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span> Suhbat belgilandi
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- CV Builder Box -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" id="cv-builder">
-                <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
-                    <i class="fa-solid fa-file-pdf text-red-500"></i> CV Generator
+            <!-- CV Builder -->
+            <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl shadow-xl" id="cv-builder">
+                <h3 class="text-base font-bold mb-2 flex items-center gap-2.5 text-white">
+                    <i class="fa-solid fa-file-pdf text-rose-400"></i> CV Generator
                 </h3>
-                <p class="text-gray-500 text-sm mb-4">Ma'lumotlaringizni kiriting va bir soniyada tayyor PDF CV ga ega bo'ling.</p>
-                <button onclick="alert('CV Generator oynasi ochilmoqda...')" class="w-full bg-gray-900 text-white py-2.5 rounded-lg font-medium hover:bg-black transition text-center block">CV Yaratish</button>
+                <p class="text-slate-400 text-xs mb-5 leading-relaxed">Ma'lumotlaringizni kiriting va bir soniyada zamonaviy PDF CV tayyorlang.</p>
+                <button onclick="alert('CV Generator oynasi ochilmoqda...')" class="w-full bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl text-xs font-bold transition">CV Yaratish</button>
             </div>
 
         </div>
@@ -157,7 +171,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-white border-t border-gray-200 mt-16 py-8 text-center text-gray-500 text-sm">
+    <footer class="bg-slate-900 border-t border-slate-800 mt-16 py-8 text-center text-slate-500 text-xs">
         <p>&copy; 2026 JobUZ. Barcha huquqlar himoyalangan.</p>
     </footer>
 

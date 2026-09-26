@@ -100,7 +100,7 @@
                         <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 font-bold text-xl">C</div>
                         <div>
                             <h3 class="text-lg font-bold flex items-center gap-2">
-                                Cybersecurity Analyst
+                                Back end
                                 <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
                                     <i class="fa-solid fa-check-circle"></i> Verified
                                 </span>
